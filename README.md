@@ -2,7 +2,7 @@
 escape browser game
 
 browser escape game
-http://twofist.info/index4.html
+http://www.twofist.info/escapegame.html
 
 
 get to the top without being crushed by the falling lines
