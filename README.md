@@ -2,7 +2,7 @@
 escape browser game
 
 browser escape game    
-https://twofist.github.io/Escape-browser-game/ or http://twofist.info/escapegame
+https://twofist.github.io/Escape-browser-game/
 
 
 get to the top without being crushed by the falling lines
