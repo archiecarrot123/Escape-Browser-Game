@@ -6,7 +6,7 @@
     <style>
     	* { padding: 0; margin: 0; }
     	canvas {
-		background-image: url("http://i.imgur.com/n30VXI8.png");
+		background-image: url('Hurricane_Isabel_from_ISS.jpg');
 		display: block;
 		margin: 0 auto;
 		}
@@ -14,7 +14,7 @@
 </head>
 <body>
 <canvas id="canvas"></canvas>
-
+<!--
 <script>
 var b=document.getElementById("canvas"),c=window.innerHeight;b.width=window.innerWidth;b.height=c;var d=b.getContext("2d"),e=b.height-50-10,f=b.width/2,g=!1,k=!1,l=!1,m,n,p=!1,q=0,r=[-1],t=!1,u=0;document.addEventListener("keydown",v,!1);document.addEventListener("keyup",w,!1);function v(a){38===a.keyCode?g=!0:39===a.keyCode?k=!0:37===a.keyCode&&(l=!0)}function w(a){38===a.keyCode?g=!1:39===a.keyCode?k=!1:37===a.keyCode&&(l=!1)}
 function x(){for(var a=0;-1!==r[a];)0<r[a].speed&&(r[a].a<b.height-10+u?r[a].a+=r[a].speed:(r[a].speed=0,u-=4)),e>=b.height-50+u&&e>r[a].a-50-q&&e<r[a].a&&f>r[a].c&&f<r[a].c+r[a].b?(alert("you lose"),document.location.reload()):e>=b.height-50+u&&e>r[a].a-50-q&&e<r[a].a&&f>r[a].c+r[a].b+100-50&&f<r[a].c+r[a].b+r[a].b+100&&(alert("you lose"),document.location.reload()),e>r[a].a-r[a].f-50-q&&e<r[a].a+r[a].f-50?(q=0,e=r[a].a-50,p=!1):e>r[a].a-50-q&&e<r[a].a&&f>r[a].c&&f<r[a].c+r[a].b?(q=0,e=r[a].a+r[a].f,
@@ -22,6 +22,8 @@ q+=.7):e>r[a].a-50-q&&e<r[a].a&&f>r[a].c+r[a].b+100-50&&f<r[a].c+r[a].b+r[a].b+1
 function z(){d.clearRect(0,0,b.width,b.height);d.beginPath();d.rect(f,e,50,50);d.fillStyle="#0095DD";d.fill();d.closePath();d.beginPath();d.rect(0,b.height-5,b.width,5);d.fillStyle="red";d.fill();d.closePath();m?(delta=(Date.now()-m)/1E3,m=Date.now(),n=1/delta,d.font="20px Arial",d.fillStyle="#0095DD",d.fillText("  FPS: "+n.toFixed(0),40,20)):(m=Date.now(),n=0);-50>e&&(alert("you win"),document.location.reload());!1===t&&(t=!0,y());k&&f<b.width-50?f+=8:l&&0<f&&(f-=8);g&&0<e&&!1===p&&(p=!0,q=-15);
 for(var a=0;-1!==r[a];){var h=a;d.beginPath();d.rect(r[h].c,r[h].a,r[h].b,r[h].f);d.rect(r[h].c+100+b.width,r[h].a,r[h].b,r[h].f);d.fillStyle="green";d.fill();d.closePath();a++}requestAnimationFrame(z)}x();z();
 </script>
+-->
+<script src="escapegame.js"></script>
 
 </body>
 </html>
