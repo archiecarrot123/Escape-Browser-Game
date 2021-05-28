@@ -81,11 +81,11 @@ function physics() {
             jumpSpeed = 0;
             paddleY = BlockList[i].blocky - paddleHeight;
             jumping = false;
-        } else if ((paddleY > BlockList[i].blocky - paddleHeight - jumpSpeed) && (paddleY < BlockList[i].blocky) && (paddleX > BlockList[i].blockx) && (paddleX < BlockList[i].blockx + BlockList[i].blockw)) {
+        } else if ((paddleY > BlockList[i].blocky - paddleHeight) && (paddleY < BlockList[i].blocky - jumpSpeed) && (paddleX > BlockList[i].blockx) && (paddleX < BlockList[i].blockx + BlockList[i].blockw)) {
             jumpSpeed = 0;
             paddleY = BlockList[i].blocky + BlockList[i].blockh;
             jumpSpeed += 0.7;
-        } else if ((paddleY > BlockList[i].blocky - paddleHeight - jumpSpeed) && (paddleY < BlockList[i].blocky) && (paddleX > BlockList[i].blockx + BlockList[i].blockw + blockSize - paddleWidth) && (paddleX < BlockList[i].blockx + BlockList[i].blockw + BlockList[i].blockw + blockSize)) {
+        } else if ((paddleY > BlockList[i].blocky - paddleHeight) && (paddleY < BlockList[i].blocky - jumpSpeed) && (paddleX > BlockList[i].blockx + BlockList[i].blockw + blockSize - paddleWidth) && (paddleX < BlockList[i].blockx + BlockList[i].blockw + BlockList[i].blockw + blockSize)) {
             jumpSpeed = 0;
             paddleY = BlockList[i].blocky + BlockList[i].blockh;
             jumpSpeed += 0.7;
