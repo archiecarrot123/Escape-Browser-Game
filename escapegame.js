@@ -67,13 +67,16 @@ function physics() {
                 bhj = BlockList[i].blocky - canvas.height
             }
         }
-        if (BlockList[i].speed !== 0 && BlockList[i].blocky < canvas.height - BlockList[i].speed * 2 + bhj) {
-                if ((paddleY >= canvas.height - paddleHeight + bhj) && (paddleY > BlockList[i].blocky - paddleHeight - jumpSpeed) && (paddleY < BlockList[i].blocky) && !((paddleX > BlockList[i].blockx + BlockList[i].blockw) && (paddleX + paddleWidth < BlockList[i].blockx + BlockList[i].blockw + blockSize))) {
+        if (BlockList[i].speed !== 0 && BlockList[i].blocky < canvas.height - BlockList[i].speed + bhj) {
+            // *3/4 to give it some tolerance so it stops killing the player at the wrong time
+                if ((paddleY >= canvas.height - paddleHeight + bhj) && (paddleY > BlockList[i].blocky - paddleHeight * 3 / 4 + BlockList[i].speed) && (paddleY < BlockList[i].blocky - jumpSpeed) && !((paddleX > BlockList[i].blockx + BlockList[i].blockw) && (paddleX + paddleWidth < BlockList[i].blockx + BlockList[i].blockw + blockSize))) {
+//                     alert("you lose (check 1)  from block " + i + "  blocky=" + BlockList[i].blocky + " jumpSpeed=" + jumpSpeed + (paddleY >= canvas.height - paddleHeight + bhj) + (paddleY > BlockList[i].blocky - paddleHeight + BlockList[i].speed) + (paddleY < BlockList[i].blocky - jumpSpeed) + !((paddleX > BlockList[i].blockx + BlockList[i].blockw) && (paddleX + paddleWidth < BlockList[i].blockx + BlockList[i].blockw + blockSize)));
                     alert("you lose");
                     document.location.reload();
-                } else if ((paddleY >= canvas.height - paddleHeight + bhj) && (paddleY > BlockList[i].blocky - paddleHeight - jumpSpeed) && (paddleY < BlockList[i].blocky) && !((paddleX > BlockList[i].blockx + BlockList[i].blockw) && (paddleX + paddleWidth < BlockList[i].blockx + BlockList[i].blockw + blockSize))) {
-                    alert("you lose");
-                    document.location.reload();
+                    // don't think this check below does anything useful
+//                 } else if ((paddleY >= canvas.height - paddleHeight + bhj) && (paddleY > BlockList[i].blocky - paddleHeight) && (paddleY < BlockList[i].blocky - jumpSpeed) && !((paddleX > BlockList[i].blockx + BlockList[i].blockw) && (paddleX + paddleWidth < BlockList[i].blockx + BlockList[i].blockw + blockSize))) {
+//                     alert("you lose");
+//                     document.location.reload();
                 }
         }
         // jumping code
@@ -100,6 +103,7 @@ function physics() {
 
     if (paddleY > canvas.height - paddleHeight + bhj) {
         jumping = false;
+        jumpSpeed = 0
         paddleY = canvas.height - paddleHeight + bhj;
     }
     
@@ -190,6 +194,9 @@ function drawFps() {
     ctx.fillStyle = "#0095DD";
     ctx.fillText("  FPS: " + fps.toFixed(0), 40, 20)
     ctx.fillText("  UPS: " + ups.toFixed(0), 40, 40)
+//     ctx.fillText("  bhj: " + bhj.toFixed(0), 40, 60)
+//     ctx.fillText("  debug1: " + (paddleY >= canvas.height - paddleHeight + bhj) + (paddleY > BlockList[1].blocky - paddleHeight + BlockList[1].speed) + (paddleY < BlockList[1].blocky - jumpSpeed) + !((paddleX > BlockList[1].blockx + BlockList[1].blockw) && (paddleX + paddleWidth < BlockList[1].blockx + BlockList[1].blockw + blockSize)), 40, 80)
+//     ctx.fillText("  debug2: " + Math.round(paddleY * 100) / 100 + ">" + Math.round(BlockList[1].blocky * 100) / 100 + "-" + Math.round(paddleHeight * 75) / 100 + "+" + BlockList[1].speed, 40, 100)
 }
 
 function noteUps() {
